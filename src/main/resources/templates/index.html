@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Convert</title>
+</head>
+<body>
+    <h1>Convert</h1>
+    <p style="color:red;">Number must not proceed max length of long type</p>
+    <form action="#" th:action="@{/}" th:object="${conversion}" method="post">
+        <p>Convert
+            <select th:field="*{numberSystemFrom}">
+                <option th:text="Decimal" th:value="'decimal'"></option>
+                <option th:text="Binary" th:value="'binary'"></option>
+            </select>
+            <input type="text" th:field="*{numberToConvert}"/>
+            to
+            <select th:field="*{numberSystemTo}">
+                <option th:text="Decimal" th:value="'decimal'"></option>
+                <option th:text="Binary" th:value="'binary'"></option>
+            </select>
+        </p>
+        <p><input type="submit" value="Convert"/></p>
+    </form>
+</body>
+</html>
